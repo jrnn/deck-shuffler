@@ -50,5 +50,16 @@ class FisherYatesTest {
             assertThat(listToShuffle.size(), is(integers.size()));
             integers.forEach(integer -> assertThat(listToShuffle, hasItem(integer)));
         }
+
+        @DisplayName("Then should always leave the last element in its original place")
+        @RepeatedTest(1000)
+        void thenShouldNeverMoveLastElement() {
+            FisherYates.shuffle(listToShuffle);
+            assertThat(getLastElement(integers), equalTo(getLastElement(listToShuffle)));
+        }
+    }
+
+    private static <T> T getLastElement(List<T> list) {
+        return list.get(list.size() - 1);
     }
 }
