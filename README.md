@@ -11,3 +11,9 @@ Build the application (incl. tests) with:
 Run the application with:
 
     $ ./gradlew run
+
+Note: if `gradlew` complains about missing permissions, it might be because I created this project
+on Windows and it might be missing the execution flag. It *should* be set, but I didn't get around
+to verifying. Just in case, here's how to set it:
+
+    $ chmod +x gradlew
