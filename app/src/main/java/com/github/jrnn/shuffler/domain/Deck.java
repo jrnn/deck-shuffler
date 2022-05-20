@@ -5,6 +5,7 @@ import static com.github.jrnn.shuffler.domain.Suite.DIAMONDS;
 import static com.github.jrnn.shuffler.domain.Suite.HEARTS;
 import static com.github.jrnn.shuffler.domain.Suite.SPADES;
 import static java.util.Collections.reverseOrder;
+import static java.util.stream.Collectors.joining;
 
 import java.util.ArrayList;
 import java.util.EnumSet;
@@ -34,7 +35,9 @@ public class Deck {
 
     @Override
     public String toString() {
-        return cards.toString();
+        return cards.stream()
+                .map(Object::toString)
+                .collect(joining(", "));
     }
 
     private void initialize() {
