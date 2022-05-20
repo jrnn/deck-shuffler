@@ -1,0 +1,23 @@
+plugins {
+    id "application"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation "org.hamcrest:hamcrest:2.2"
+    testImplementation "org.junit.jupiter:junit-jupiter:5.8.2"
+}
+
+application {
+    mainClass = "com.github.jrnn.shuffler.App"
+}
+
+tasks.named("test") {
+    useJUnitPlatform()
+}
+
+group = "com.github.jrnn"
+version = "0.0.0"
